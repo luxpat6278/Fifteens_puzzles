@@ -22,7 +22,6 @@ const App = () => {
   };
 
   const handleSaveToLeaders = () => {
-    // можно добавить логику сохранения
     setShowVictory(false);
   };
 
