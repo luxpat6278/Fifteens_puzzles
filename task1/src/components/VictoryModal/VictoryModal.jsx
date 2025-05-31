@@ -1,22 +1,11 @@
-// 📁 src/components/VictoryModal/VictoryModal.jsx
 import React, { useState } from 'react';
 import './VictoryModal.css';
 
-/**
- * Props:
- *  - isOpen: boolean (показывать ли окно)
- *  - onSave: функция(result) → вызывается, когда пользователь ввёл имя и нажал "Сохранить"
- *      result = { name: string, moves: number, timeString: string, date: string }
- *  - onClose: функция() → вызывается, когда пользователь нажал "Закрыть" (не сохранять)
- *  - moves: число ходов
- *  - time: секунд (число)
- */
 const VictoryModal = ({ isOpen, onSave, onClose, moves, time }) => {
   const [name, setName] = useState('');
 
   if (!isOpen) return null;
 
-  // Преобразует секунды в строку «мм:сс»
   const formatTime = (sec) => {
     const m = Math.floor(sec / 60);
     const s = sec % 60;
@@ -33,14 +22,12 @@ const VictoryModal = ({ isOpen, onSave, onClose, moves, time }) => {
     day: '2-digit',
   });
 
-  // Когда нажали "Сохранить в таблицу лидеров"
   const handleSave = () => {
     const trimmed = name.trim();
     if (trimmed.length < 1) {
       alert('Пожалуйста, введите имя (минимум 1 символ).');
       return;
     }
-    // Собираем объект результата
     const result = {
       name: trimmed,
       moves,
@@ -48,7 +35,6 @@ const VictoryModal = ({ isOpen, onSave, onClose, moves, time }) => {
       date: dateString,
     };
     onSave(result);
-    // Сброс input
     setName('');
   };
 
