@@ -1,13 +1,11 @@
-// Возвращает перемешанную, но решаемую доску
 export const generateBoard = () => {
   let tiles;
   do {
-    tiles = shuffle([...Array(15).keys(), 0]); // Массив от 0 до 15 (0 — пустая ячейка)
+    tiles = shuffle([...Array(15).keys(), 0]); 
   } while (!isSolvable(tiles));
   return tiles;
 };
 
-// Перемешивание массива (алгоритм Фишера-Йейтса)
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -16,7 +14,6 @@ const shuffle = (array) => {
   return array;
 };
 
-// Проверка, решаема ли комбинация
 const isSolvable = (tiles) => {
   let inversions = 0;
   for (let i = 0; i < tiles.length; i++) {
@@ -28,7 +25,6 @@ const isSolvable = (tiles) => {
   return (inversions + emptyRow) % 2 === 0;
 };
 
-// Проверка, можно ли переместить фишку
 export const canMove = (index, emptyIndex) => {
   const row = Math.floor(index / 4);
   const col = index % 4;
@@ -40,14 +36,13 @@ export const canMove = (index, emptyIndex) => {
   );
 };
 
-// Обмен фишек местами
 export const swapTiles = (tiles, index1, index2) => {
   const newTiles = [...tiles];
   [newTiles[index1], newTiles[index2]] = [newTiles[index2], newTiles[index1]];
   return newTiles;
 };
 
-// Проверка, решена ли головоломка
+
 export const isSolved = (tiles) => {
   for (let i = 0; i < 15; i++) {
     if (tiles[i] !== i + 1) return false;
