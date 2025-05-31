@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 400px;
+
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: aliceblue;
+}
+
+.header-section {
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.lang-btn {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lang-btn:hover {
+  background-color: #333;
+}
