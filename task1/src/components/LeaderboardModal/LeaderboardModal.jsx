@@ -1,17 +1,9 @@
-// 📁 src/components/LeaderboardModal/LeaderboardModal.jsx
 import React, { useEffect, useState } from 'react';
 import './LeaderboardModal.css';
 
-/**
- * Props:
- *  - isOpen: boolean — показывать ли окно
- *  - onClose: function() — колбэк для закрытия
- *  - language: 'ru' | 'en' (опционально, чтобы менять заголовки)
- */
 const LeaderboardModal = ({ isOpen, onClose, language }) => {
   const [leaders, setLeaders] = useState([]);
 
-  // При открытии читаем массив из localStorage
   useEffect(() => {
     if (!isOpen) return;
 
