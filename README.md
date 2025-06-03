@@ -92,7 +92,7 @@ fifteen-puzzle/
    ```bash
    git clone https://github.com/your-username/fifteen-puzzle.git
    cd fifteen-puzzle
-````
+
 
 2. **Установить зависимости** (используется Vite + React):
 
