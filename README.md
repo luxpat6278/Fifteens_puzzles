@@ -302,7 +302,7 @@ export default Board;
 ```text
 MIT License
 
-Copyright (c) 2025 Ваше Имя
+Copyright (c) 2025 Kostrov Nikita
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 ...
